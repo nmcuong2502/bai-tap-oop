@@ -8,17 +8,16 @@ MSSV: **25127024**
 
 
 ```mermaid
-
 classDiagram
     class MenuApp {
-        -menu Menu
+        -menu: Menu
         +run()
         -promptChoice() int
         -displayItem(item)
     }
 
     class Menu {
-        -items vector~MenuItem~
+        -items: vector~MenuItem~
         +addItem(item)
         +getItem(choice) MenuItem
         +size() int
@@ -26,15 +25,14 @@ classDiagram
     }
 
     class MenuItem {
-        -name string
-        -price int
+        -name: string
+        -price: int
         +getName() string
         +getPrice() int
     }
 
-    MenuApp --> Menu
-    Menu --> MenuItem
-    
+    MenuApp --> Menu : uses
+    Menu "1" *-- "many" MenuItem : contains
 ```
 
 ## 2. Giải thích lý do thiết kế
