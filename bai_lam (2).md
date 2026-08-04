@@ -18,7 +18,7 @@ classDiagram
     }
 
     class Menu {
-        -items List
+        -items vector~MenuItem~
         +addItem(item)
         +getItem(choice) MenuItem
         +size() int
